@@ -31,3 +31,36 @@ document.querySelectorAll('.project-visual.gallery').forEach(gallery => {
     });
   });
 });
+
+// ---------- CERTIFICATIONS TOGGLE ----------
+
+const certGrid = document.getElementById('certGrid');
+const certToggle = document.getElementById('certToggle');
+
+if (certToggle) {
+  certToggle.addEventListener('click', () => {
+    const isExpanded = certGrid.classList.toggle('expanded');
+    certToggle.textContent = isExpanded ? 'Show less ↑' : 'Show all 14 ↓';
+  });
+}
+const imgModal = document.getElementById('imgModal');
+const imgModalFull = document.getElementById('imgModalFull');
+const imgModalClose = document.getElementById('imgModalClose');
+
+document.querySelectorAll('.cert-card').forEach(card => {
+  card.addEventListener('click', () => {
+    imgModalFull.src = card.dataset.full;
+    imgModal.classList.add('open');
+  });
+});
+
+function closeImgModal() {
+  imgModal.classList.remove('open');
+  imgModalFull.src = '';
+}
+
+imgModalClose.addEventListener('click', closeImgModal);
+
+imgModal.addEventListener('click', (e) => {
+  if (e.target === imgModal) closeImgModal();
+});

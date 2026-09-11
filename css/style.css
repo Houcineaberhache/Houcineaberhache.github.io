@@ -607,7 +607,259 @@ a {
   margin-top: 3px;
   font-weight: 400;
 }
+/* ---------- EDUCATION & EXPERIENCE ---------- */
 
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .9fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.edu-subtitle {
+  font: 600 12px "JetBrains Mono", monospace;
+  color: #22d3ee;
+  letter-spacing: 1px;
+  margin: 30px 0 10px;
+}
+
+.edu-subtitle:first-child {
+  margin-top: 0;
+}
+
+.edu-table {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid #202020;
+}
+
+.edu-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid #202020;
+}
+
+.edu-date {
+  font: 600 13px "JetBrains Mono", monospace;
+  color: #22d3ee;
+}
+
+.edu-info h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.edu-info p {
+  margin: 0;
+  color: #a1a1aa;
+  font-size: 13px;
+}
+
+.edu-logos {
+  border: 1px solid #252525;
+  background: #111212;
+  border-radius: 14px;
+  padding: 28px;
+  position: sticky;
+  top: 90px;
+}
+
+.edu-logos-title {
+  font: 600 12px "JetBrains Mono", monospace;
+  color: #a1a1aa;
+  letter-spacing: 1px;
+  margin: 0 0 22px;
+}
+
+.edu-logos .logo-row {
+  gap: 22px;
+}
+
+.edu-logos .logo-item {
+  width: 90px;
+}
+
+.edu-logos .logo-tile {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+}
+
+.edu-logos .logo-tile img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.edu-logos .logo-item span {
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .edu-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .edu-row {
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+
+  .edu-logos {
+    position: static;
+  }
+}
+/* ---------- CERTIFICATIONS ---------- */
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.cert-card {
+  border: 1px solid #252525;
+  border-radius: 12px;
+  background: #111212;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.cert-card:hover {
+  border-color: #22d3ee;
+  transform: translateY(-2px);
+}
+
+.cert-thumb {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  display: block;
+  border-bottom: 1px solid #252525;
+  background: #f5f5f5;
+  padding: 8px;
+}
+
+.cert-info {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-info h3 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.cert-issuer {
+  font-size: 12px;
+  color: #a1a1aa;
+}
+
+.cert-date {
+  font: 600 11px "JetBrains Mono", monospace;
+  color: #22d3ee;
+}
+
+.cert-card.extra {
+  display: none;
+}
+
+.cert-grid.expanded .cert-card.extra {
+  display: block;
+}
+
+.cert-toggle {
+  margin-top: 24px;
+  cursor: pointer;
+  background: #22d3ee;
+  color: #061012;
+  border-color: #22d3ee;
+  font-weight: 700;
+}
+
+.cert-toggle:hover {
+  background: #1bb8d4;
+  border-color: #1bb8d4;
+}
+.cert-thumb-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-expand {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(8, 9, 9, .75);
+  border: 1px solid #292929;
+  color: #22d3ee;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.cert-card:hover .cert-expand {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ---------- IMAGE LIGHTBOX ---------- */
+
+.img-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .88);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.img-modal.open {
+  display: flex;
+}
+
+.img-modal img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  border: 1px solid #292929;
+}
+
+.img-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0e0f0f;
+  border: 1px solid #292929;
+  color: #f5f5f5;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* ---------- CONTACT / FOOTER ---------- */
 
 .contact {
