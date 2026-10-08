@@ -967,140 +967,64 @@ footer {
   font: 12px "JetBrains Mono", monospace;
 }
 
-/* =========================================================
-   RESPONSIVE FIXES
-   ========================================================= */
-
-img {
-  max-width: 100%;
-}
-
-/* ---------- JOURNEY PHOTOS (desktop) ---------- */
-
-.journey-photo {
-  position: relative;
-  width: 180px;
-  min-width: 180px;
-  min-height: 220px;
-  background: #0b0c0c;
-  overflow: hidden;
-}
-
-.journey-photo img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top; /* keeps faces in frame */
-}
-
-/* ---------- TABLET (up to 1000px) ---------- */
-
-@media (max-width: 1000px) {
-  .hero-grid {
-    gap: 40px;
-  }
-
-  .journey-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .edu-grid {
-    gap: 36px;
-  }
-
-  .cert-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ---------- MOBILE (up to 800px) ---------- */
+/* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 800px) {
-  .section h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
+  .nav nav {
+    display: none;
   }
 
-  .cert-grid {
-    grid-template-columns: 1fr;
+  .menu-btn {
+    display: block;
   }
 
-  /* Journey cards: photo on top, full width */
-  .journey-card {
-    flex-direction: column;
-  }
-
-  .journey-photo {
-    width: 100%;
-    min-width: 0;
-    height: 240px;
-    min-height: 0;
-  }
-
-  .journey-photo img {
-    object-position: center 20%;
-  }
-
-  .journey-body {
-    padding: 18px;
-  }
-
-  /* Education logos panel */
-  .edu-logos {
-    padding: 20px;
-  }
-
-  .edu-logos .logo-row {
-    justify-content: center;
-    gap: 16px;
-  }
-
-  /* Projects */
-  .project-body {
-    padding: 20px;
-  }
-
-  .project-body h3 {
-    font-size: 20px;
-  }
-
-  .thumb-strip {
-    flex-wrap: wrap;
-  }
-
-  .contact {
-    padding: 80px 0;
-  }
-}
-
-/* ---------- SMALL PHONES (up to 480px) ---------- */
-
-@media (max-width: 480px) {
   .hero {
-    padding: 55px 0;
+    padding: 75px 0;
+  }
+
+  .hero-grid,
+  .two-col,
+  .featured {
+    grid-template-columns: 1fr;
   }
 
   .hero-photo {
-    min-height: 280px;
+    min-height: 320px;
   }
 
-  .actions .btn {
-    flex: 1 1 auto;
-    text-align: center;
+  .photo-badge {
+    font-size: 12px;
+    padding: 8px 13px;
   }
 
-  .stack-card {
-    padding: 18px;
+  .terminal {
+    margin-top: 10px;
   }
 
-  .edu-row {
+  .section {
+    padding: 75px 0;
+  }
+
+  .section h2 {
+    font-size: 34px;
+  }
+
+  .project-grid,
+  .stack-grid,
+  .certs {
     grid-template-columns: 1fr;
-    gap: 6px;
   }
 
-  .journey-photo {
-    height: 200px;
+  .project-visual {
+    border-right: 0;
+    border-bottom: 1px solid #252525;
+  }
+
+  .featured .project-visual {
+    min-height: 180px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
   }
 }
