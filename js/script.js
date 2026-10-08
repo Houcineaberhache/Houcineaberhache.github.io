@@ -64,3 +64,9 @@ imgModalClose.addEventListener('click', closeImgModal);
 imgModal.addEventListener('click', (e) => {
   if (e.target === imgModal) closeImgModal();
 });
+
+document.querySelectorAll('.nav nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 800) nav.style.display = 'none';
+  });
+});
